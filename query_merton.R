@@ -1,8 +1,18 @@
 #' Query the Merton (Ollama) Server
-#' @param prompt Prompt to send
-#' @param model Model to use (default = "gemma3:1b")
-#' @return Text response
+#'
+#' Sends a prompt to the remote Merton (Ollama) server and returns the generated response.
+#'
+#' @param prompt A character string with your query (e.g., a question or task).
+#' @param model A string indicating the model to use (default is `"gemma3:1b"`).
+#'
+#' @return A character string containing the model's response.
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#'   set_merton_config("http://localhost:11434", "your-api-key")
+#'   query_merton("What is sociology?")
+#' }
 query_merton <- function(prompt, model = "gemma3:1b") {
   cfg <- get_merton_config()
 
